@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500&family=Source+Sans+Pro:wght@200;300;400&display=swap");
+
+// variables
+$black: #494949;
+$light: #8ab6d6;
+$bezier: cubic-bezier(0.22, 0.65, 0.09, 0.79);
+//
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+#app {
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  font-weight: 300;
+  color: #494949;
+}
+
+//Navigation
+#nav {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  position: absolute;
+  z-index: 100;
+}
+
+#nav a {
+  font-size: 36px;
+  color: $black;
+  font-family: "Advent Pro", sans-serif;
+  margin-bottom: 36px;
+  width: max-content;
+  text-decoration: none !important;
+  position: relative;
+  z-index: 2;
+  &:hover:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: $light;
+    animation: dash 0.5s $bezier forwards;
+    z-index: -1;
+  }
+  &:not(:hover):after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: $light;
+    width: 100%;
+    animation: dash-off 0.5s $bezier forwards;
+    z-index: -1;
+  }
+}
+
+#nav a.router-link-exact-active {
+  color: #0c7896;
+}
+
+//Navigation animations
+@keyframes dash {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes dash-off {
+  to {
+    width: 0%;
+  }
+}
+
+//Home
+.left-bg {
+  transform-origin: top center;
+  animation: slide-down 1s cubic-bezier(0.2, 0.89, 0, 1.12) forwards;
+}
+
+.right-bg {
+  transform-origin: top center;
+  animation: slide-up 1s cubic-bezier(0.2, 0.89, 0, 1.12) forwards;
+}
+
+.left-title,
+.right-title {
+  opacity: 0;
+  animation: fade-in 0.5s 1s ease-in forwards;
+}
+
+.sub-title {
+  font-weight: 300;
+  opacity: 0;
+  animation: fade-in 0.5s 1.5s ease-in forwards;
+}
+
+.nav {
+  opacity: 0;
+  animation: fade-in 0.5s 2s ease-in forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 0.5s 0.7s ease-in forwards;
+}
+
+//Home animations
+@keyframes slide-down {
+  0% {
+    transform: translate(0, -1000px);
+  }
+  95% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translate(0, 1000px);
+  }
+  95% {
+    transform: translate(0, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80vw;
+  }
+}
