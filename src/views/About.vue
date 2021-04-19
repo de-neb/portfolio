@@ -24,7 +24,7 @@
     <div class="container p-5 d-flex justify-content-center mt-3">
       <div class="row row-cols-xl-4 row-cols-xs-2 justify-content-around w-500">
         <div
-          class="logo col-3"
+          class="logo col-3 mt-3"
           v-for="(logo, index) in logos"
           :key="logo"
           @mouseover="showTooltip(index)"
@@ -42,16 +42,13 @@
       </div>
     </div>
   </MainContent>
-  <RightSideNav />
 </template>
 
 <script>
-import RightSideNav from "../components/RightSideNav";
 import MainContent from "../components/MainContent";
 export default {
   name: "About",
   components: {
-    RightSideNav,
     MainContent,
   },
   data() {
@@ -90,7 +87,8 @@ export default {
 
 <style>
 .title {
-  font-family: "Advent Pro", sans-serif;
+  font-family: "Anonymous Pro", monospace;
+  color: #4ecca3;
   font-size: 50px;
   text-align: left;
   margin-top: 50px;
@@ -101,8 +99,9 @@ export default {
 .container {
   width: 100%;
   text-align: left;
-  background: #bad7df;
-  box-shadow: 7px 7px 5px #66777c;
+  border-left: 1px solid #4ecca3;
+  background: #2d3137;
+  color: #eeeeee;
   opacity: 0;
   animation: fade-in 0.5s 0.7s forwards;
 }
@@ -137,12 +136,11 @@ export default {
   top: 0;
   left: 50%;
   margin-left: -60px;
-  background: rgba(73, 73, 73, 0.8);
-  font-weight: 400;
-  color: #fffdf6;
+  background: rgba(78, 204, 163, 0.8);
+  font-weight: bold;
+  color: #232931;
   padding: 10px;
   width: 100px;
-  border-radius: 5px;
   z-index: 100;
 }
 

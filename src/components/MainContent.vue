@@ -5,17 +5,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "MainContent",
+};
 </script>
 
 <style>
 .main-content {
-  background: #f9f9f9;
+  background: #232931;
   width: 80vw;
-  height: 100vh;
+  height: 90vh;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  right: 0;
+  margin-top: -45vh;
   display: flex;
   flex-direction: column;
   padding: 0 70px 70px;
@@ -25,11 +28,12 @@ export default {};
 
 /* //scrollbar style */
 .main-content::-webkit-scrollbar {
-  background: #f9f9f9;
+  background: #232931;
+  width: 3px;
 }
 
 /* Handle */
 .main-content::-webkit-scrollbar-thumb {
-  background: #8ab6d6;
+  background: #4ecca3;
 }
 </style>

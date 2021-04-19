@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500&family=Source+Sans+Pro:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Inconsolata:wdth,wght@75,300;100,300&family=Roboto+Mono:wght@300&display=swap");
 * {
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -11,15 +11,28 @@ html {
   width: 100%;
   height: 100%;
   overflow-y: hidden;
+  background: #232931 !important;
 }
 
 #app {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Inconsolata", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-weight: 300;
-  color: #494949;
+  color: #eee;
+}
+
+.hr {
+  width: 1px;
+  height: 90vh;
+  background: #4ecca3;
+  position: absolute;
+  left: 20vw;
+  top: 50%;
+  z-index: 100;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 #nav {
@@ -30,15 +43,14 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 200px;
-  position: absolute;
-  z-index: 100;
+  width: 250px;
 }
 
 #nav a {
   font-size: 36px;
-  color: #494949;
-  font-family: "Advent Pro", sans-serif;
+  line-height: 36px;
+  color: #4ecca3;
+  font-family: "Anonymous Pro", monospace;
   margin-bottom: 36px;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -48,6 +60,10 @@ html {
   z-index: 2;
 }
 
+#nav a:hover {
+  color: #232931;
+}
+
 #nav a:hover:after {
   content: "";
   position: absolute;
@@ -55,7 +71,7 @@ html {
   left: 0;
   width: 0;
   height: 100%;
-  background: #8ab6d6;
+  background: #4ecca3;
   -webkit-animation: dash 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79) forwards;
           animation: dash 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79) forwards;
   z-index: -1;
@@ -68,7 +84,7 @@ html {
   right: 0;
   width: 0;
   height: 100%;
-  background: #8ab6d6;
+  background: #4ecca3;
   width: 100%;
   -webkit-animation: dash-off 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79) forwards;
           animation: dash-off 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79) forwards;
@@ -76,7 +92,13 @@ html {
 }
 
 #nav a.router-link-exact-active {
-  color: #0c7896;
+  color: #eee;
+}
+
+#nav a.router-link-exact-active span {
+  border-right: 2px solid transparent;
+  -webkit-animation: blink-white 0.75s step-end infinite;
+          animation: blink-white 0.75s step-end infinite;
 }
 
 @-webkit-keyframes dash {
@@ -103,38 +125,54 @@ html {
   }
 }
 
-.left-bg {
-  -webkit-transform-origin: top center;
-          transform-origin: top center;
-  -webkit-animation: slide-down 1s cubic-bezier(0.2, 0.89, 0, 1.12) forwards;
-          animation: slide-down 1s cubic-bezier(0.2, 0.89, 0, 1.12) forwards;
+@-webkit-keyframes blink-white {
+  50% {
+    border-color: #eee;
+  }
 }
 
-.right-bg {
-  -webkit-transform-origin: top center;
-          transform-origin: top center;
-  -webkit-animation: slide-up 1s cubic-bezier(0.2, 0.89, 0, 1.12) forwards;
-          animation: slide-up 1s cubic-bezier(0.2, 0.89, 0, 1.12) forwards;
+@keyframes blink-white {
+  50% {
+    border-color: #eee;
+  }
 }
 
-.left-title,
-.right-title {
-  opacity: 0;
-  -webkit-animation: fade-in 0.5s 1s ease-in forwards;
-          animation: fade-in 0.5s 1s ease-in forwards;
+.side-nav {
+  width: auto;
+  height: 100vh;
+  background: #232931;
+  color: #4ecca3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.sub-title {
+.nav-title {
+  font-size: 75px;
+  font-family: "Anonymous Pro", monospace;
   font-weight: 300;
+  overflow: hidden;
+  letter-spacing: 3px;
+  line-height: 60px;
+}
+
+.caret {
+  border-right: 0.15rem solid #4ecca3;
+  -webkit-animation: blink 0.75s step-end infinite;
+          animation: blink 0.75s step-end infinite;
+}
+
+.sub-text {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 1.2rem;
   opacity: 0;
-  -webkit-animation: fade-in 0.5s 1.5s ease-in forwards;
-          animation: fade-in 0.5s 1.5s ease-in forwards;
+  -webkit-animation: fade-in 0.5s 2.2s ease-in forwards;
+          animation: fade-in 0.5s 2.2s ease-in forwards;
 }
 
 .nav {
   opacity: 0;
-  -webkit-animation: fade-in 0.5s 2s ease-in forwards;
-          animation: fade-in 0.5s 2s ease-in forwards;
+  -webkit-animation: fade-in 0.5s 2.5s ease-in forwards;
+          animation: fade-in 0.5s 2.5s ease-in forwards;
 }
 
 .fade-in {
@@ -143,63 +181,65 @@ html {
           animation: fade-in 0.5s 0.7s ease-in forwards;
 }
 
-@-webkit-keyframes slide-down {
-  0% {
-    -webkit-transform: translate(0, -1000px);
-            transform: translate(0, -1000px);
-  }
-  95% {
-    -webkit-transform: translate(0, 10px);
-            transform: translate(0, 10px);
-  }
+@-webkit-keyframes blink {
+  0%,
   100% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+    border-color: transparent;
+  }
+  50% {
+    border-color: #4ecca3;
   }
 }
 
-@keyframes slide-down {
-  0% {
-    -webkit-transform: translate(0, -1000px);
-            transform: translate(0, -1000px);
-  }
-  95% {
-    -webkit-transform: translate(0, 10px);
-            transform: translate(0, 10px);
-  }
+@keyframes blink {
+  0%,
   100% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+    border-color: transparent;
+  }
+  50% {
+    border-color: #4ecca3;
   }
 }
 
-@-webkit-keyframes slide-up {
+@-webkit-keyframes float {
   0% {
-    -webkit-transform: translate(0, 1000px);
-            transform: translate(0, 1000px);
+    -webkit-box-shadow: 7px 5px #393e46;
+            box-shadow: 7px 5px #393e46;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
-  95% {
-    -webkit-transform: translate(0, -10px);
-            transform: translate(0, -10px);
+  50% {
+    -webkit-box-shadow: 7px 0px #393e46;
+            box-shadow: 7px 0px #393e46;
+    -webkit-transform: translate(0, -49%);
+            transform: translate(0, -49%);
   }
   100% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+    -webkit-box-shadow: 7px 5px #393e46;
+            box-shadow: 7px 5px #393e46;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
 }
 
-@keyframes slide-up {
+@keyframes float {
   0% {
-    -webkit-transform: translate(0, 1000px);
-            transform: translate(0, 1000px);
+    -webkit-box-shadow: 7px 5px #393e46;
+            box-shadow: 7px 5px #393e46;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
-  95% {
-    -webkit-transform: translate(0, -10px);
-            transform: translate(0, -10px);
+  50% {
+    -webkit-box-shadow: 7px 0px #393e46;
+            box-shadow: 7px 0px #393e46;
+    -webkit-transform: translate(0, -49%);
+            transform: translate(0, -49%);
   }
   100% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+    -webkit-box-shadow: 7px 5px #393e46;
+            box-shadow: 7px 5px #393e46;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
 }
 
@@ -237,5 +277,38 @@ html {
   to {
     width: 80vw;
   }
+}
+
+.text-teal {
+  color: #4ecca3;
+}
+
+.bg-teal {
+  border: 1px solid #4ecca3 !important;
+  background: none !important;
+}
+
+.btn-teal {
+  background: transparent !important;
+  border: 1px solid #4ecca3 !important;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+}
+
+.btn-teal.active {
+  background: #4ecca3 !important;
+}
+
+.btn-outline-teal {
+  border-color: #4ecca3 !important;
+  color: #eee !important;
+}
+
+.btn-outline-teal:hover {
+  background: #4ecca3 !important;
+  color: #232931 !important;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500&family=Source+Sans+Pro:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Inconsolata:wdth,wght@75,300;100,300&family=Roboto+Mono:wght@300&display=swap");
 
-// variables
-$black: #494949;
-$light: #8ab6d6;
+$black: #232931;
+$teal: #4ecca3;
+$white: #eee;
 $bezier: cubic-bezier(0.22, 0.65, 0.09, 0.79);
 //
 
@@ -17,35 +17,49 @@ html {
   width: 100%;
   height: 100%;
   overflow-y: hidden;
+  background: $black !important;
 }
 
 #app {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Inconsolata", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-weight: 300;
-  color: #494949;
+  color: $white;
+}
+
+.hr {
+  width: 1px;
+  height: 90vh;
+  background: $teal;
+  position: absolute;
+  left: 20vw;
+  top: 50%;
+  z-index: 100;
+  transform: translate(0, -50%);
 }
 
 //Navigation
 #nav {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  position: absolute;
-  z-index: 100;
+  width: 250px;
 }
 
 #nav a {
   font-size: 36px;
-  color: $black;
-  font-family: "Advent Pro", sans-serif;
+  line-height: 36px;
+  color: $teal;
+  font-family: "Anonymous Pro", monospace;
   margin-bottom: 36px;
   width: max-content;
   text-decoration: none !important;
   position: relative;
   z-index: 2;
+  &:hover {
+    color: $black;
+  }
   &:hover:after {
     content: "";
     position: absolute;
@@ -53,7 +67,7 @@ html {
     left: 0;
     width: 0;
     height: 100%;
-    background: $light;
+    background: $teal;
     animation: dash 0.5s $bezier forwards;
     z-index: -1;
   }
@@ -64,7 +78,7 @@ html {
     right: 0;
     width: 0;
     height: 100%;
-    background: $light;
+    background: $teal;
     width: 100%;
     animation: dash-off 0.5s $bezier forwards;
     z-index: -1;
@@ -72,7 +86,11 @@ html {
 }
 
 #nav a.router-link-exact-active {
-  color: #0c7896;
+  color: $white;
+  & span {
+    border-right: 2px solid transparent;
+    animation: blink-white 0.75s step-end infinite;
+  }
 }
 
 //Navigation animations
@@ -88,32 +106,45 @@ html {
   }
 }
 
+@keyframes blink-white {
+  50% {
+    border-color: $white;
+  }
+}
+
 //Home
-.left-bg {
-  transform-origin: top center;
-  animation: slide-down 1s cubic-bezier(0.2, 0.89, 0, 1.12) forwards;
+.side-nav {
+  width: auto;
+  height: 100vh;
+  background: #232931;
+  color: #4ecca3;
+  box-sizing: border-box;
 }
 
-.right-bg {
-  transform-origin: top center;
-  animation: slide-up 1s cubic-bezier(0.2, 0.89, 0, 1.12) forwards;
-}
-
-.left-title,
-.right-title {
-  opacity: 0;
-  animation: fade-in 0.5s 1s ease-in forwards;
-}
-
-.sub-title {
+.nav-title {
+  font-size: 75px;
+  font-family: "Anonymous Pro", monospace;
   font-weight: 300;
+  overflow: hidden;
+  letter-spacing: 3px;
+  line-height: 60px;
+}
+
+.caret {
+  border-right: 0.15rem solid $teal;
+  animation: blink 0.75s step-end infinite;
+}
+
+.sub-text {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 1.2rem;
   opacity: 0;
-  animation: fade-in 0.5s 1.5s ease-in forwards;
+  animation: fade-in 0.5s 2.2s ease-in forwards;
 }
 
 .nav {
   opacity: 0;
-  animation: fade-in 0.5s 2s ease-in forwards;
+  animation: fade-in 0.5s 2.5s ease-in forwards;
 }
 
 .fade-in {
@@ -122,27 +153,28 @@ html {
 }
 
 //Home animations
-@keyframes slide-down {
-  0% {
-    transform: translate(0, -1000px);
-  }
-  95% {
-    transform: translate(0, 10px);
-  }
+@keyframes blink {
+  0%,
   100% {
-    transform: translate(0, 0);
+    border-color: transparent;
+  }
+  50% {
+    border-color: $teal;
   }
 }
 
-@keyframes slide-up {
+@keyframes float {
   0% {
-    transform: translate(0, 1000px);
+    box-shadow: 7px 5px #393e46;
+    transform: translate(0, -50%);
   }
-  95% {
-    transform: translate(0, -10px);
+  50% {
+    box-shadow: 7px 0px #393e46;
+    transform: translate(0, -49%);
   }
   100% {
-    transform: translate(0, 0);
+    box-shadow: 7px 5px #393e46;
+    transform: translate(0, -50%);
   }
 }
 
@@ -161,5 +193,37 @@ html {
   }
   to {
     width: 80vw;
+  }
+}
+
+//Projects
+.text-teal {
+  color: $teal;
+}
+
+.bg-teal {
+  border: 1px solid $teal !important;
+  background: none !important;
+}
+
+.btn-teal {
+  background: transparent !important;
+  border: 1px solid $teal !important;
+  box-sizing: border-box !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+}
+
+.btn-teal.active {
+  background: $teal !important;
+}
+
+.btn-outline-teal {
+  border-color: $teal !important;
+  color: $white !important;
+  &:hover {
+    background: $teal !important;
+    color: $black !important;
   }
 }

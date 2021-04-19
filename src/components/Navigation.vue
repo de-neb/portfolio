@@ -1,13 +1,29 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/projects">Projects</router-link>
-    <router-link to="/contact">Contact</router-link>
+    <router-link
+      class="w-100 text-start"
+      v-for="link in navLinks"
+      :key="link"
+      :to="getLink(link)"
+      >{{ link }}<span></span
+    ></router-link>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Navigation",
+  data() {
+    return {
+      navLinks: ["Home", "About", "Projects", "Contact"],
+    };
+  },
+  methods: {
+    getLink(link) {
+      return link === "Home" ? "/" : "/" + link.toLowerCase();
+    },
+  },
+};
 </script>
+
 

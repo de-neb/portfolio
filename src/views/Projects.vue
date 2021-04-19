@@ -8,7 +8,7 @@
       entries and some of these are interactive when clicked or hovered while
       some are pure animation.
     </p>
-    <div class="container p-5 d-flex justify-content-center">
+    <div class="container p-5 d-flex justify-content-center mb-5">
       <div
         id="project-carousel"
         class="carousel slide carousel-dark carousel-fade w-75"
@@ -17,245 +17,32 @@
         <div class="carousel-indicators">
           <button
             data-bs-target="#project-carousel"
-            data-bs-slide-to="0"
-            class="active"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="1"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="2"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="3"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="4"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="5"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="6"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="7"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="8"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="9"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="10"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="11"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="12"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="13"
-          ></button>
-          <button
-            data-bs-target="#project-carousel"
-            data-bs-slide-to="14"
+            v-for="(el, i) in pens"
+            :key="i"
+            :data-bs-slide-to="i"
+            class="btn-teal"
+            :class="{ active: i == 0 }"
           ></button>
         </div>
         <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active">
+          <div
+            class="carousel-item text-center"
+            v-for="(pen, index) in pens"
+            :class="{ active: index == 0 }"
+            :key="pen"
+          >
             <iframe
               scrolling="no"
-              title="#4"
-              src="https://codepen.io/denksy/embed/XWNgoev?height=500&theme-id=24311&default-tab=result"
+              :title="pen.title"
+              :src="
+                'https://codepen.io/denksy/embed/' +
+                pen.url +
+                '?height=500&theme-id=24311&default-tab=result'
+              "
               frameborder="no"
               loading="lazy"
               allowtransparency="true"
               allowfullscreen="false"
-              data-show-tab-bar="no"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#63"
-              src="https://codepen.io/denksy/embed/BaQQLON?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#7"
-              src="https://codepen.io/denksy/embed/WNoZyQK?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#1"
-              src="https://codepen.io/denksy/embed/rNWmNxZ?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#2"
-              src="https://codepen.io/denksy/embed/QWGvVvJ?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#3"
-              src="https://codepen.io/denksy/embed/qBqjVeW?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#5"
-              src="https://codepen.io/denksy/embed/rNWzzzR?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#6-Notification"
-              src="https://codepen.io/denksy/embed/mdOBdya?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#8-Raining"
-              src="https://codepen.io/denksy/embed/vYyWgpV?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#9"
-              src="https://codepen.io/denksy/embed/eYByZRX?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#12"
-              src="https://codepen.io/denksy/embed/BaQxdQq?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#13- Bike &amp; Ship"
-              src="https://codepen.io/denksy/embed/LYbrzqM?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#14- Upload"
-              src="https://codepen.io/denksy/embed/QWGBXav?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#15 - Shapes"
-              src="https://codepen.io/denksy/embed/rNWZPaN?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              scrolling="no"
-              title="#16"
-              src="https://codepen.io/denksy/embed/yLVGoPo?height=500&theme-id=24311&default-tab=result"
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="true"
             >
             </iframe>
           </div>
@@ -268,7 +55,7 @@
           role="button"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <i class="fas fa-chevron-left text-teal fa-3x"></i>
         </button>
         <button
           type="button"
@@ -277,25 +64,25 @@
           role="button"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <i class="fas fa-chevron-right text-teal fa-3x"></i>
         </button>
       </div>
     </div>
-    <h1 class="title text-end">Projetcs I made so far</h1>
+    <h1 class="title text-end mt-5">Projetcs I made so far</h1>
     <div class="container p-5 mt-3 d-flex justify-content-center">
       <div class="row mt-5 justify-content-evenly gap-1">
         <div
-          class="card text-dark bg-light mb-3 col-xxl-4 col-xl-4 col-lg-5 col-md-9 col-sm-9 col-9 p-3"
+          class="card bg-teal mb-5 col-xxl-5 col-xl-5 col-lg-4 col-md-9 col-sm-9 col-9"
           v-for="project in projects"
           :key="project.url"
         >
           <img
             :src="getImg(project.url)"
-            class="card-img-top border border-primary"
+            class="card-img-top mt-3"
             :alt="project.title"
           />
           <div class="card-body">
-            <h5 class="card-title">{{ project.title }}</h5>
+            <h5 class="card-title text-teal fw-bold">{{ project.title }}</h5>
             <p class="card-text">
               {{ project.text }}
             </p>
@@ -303,7 +90,7 @@
               <a
                 :href="'https://denksy.github.io/' + project.url"
                 type="button"
-                class="btn btn-outline-primary"
+                class="btn btn-outline-teal"
                 target="_blank"
               >
                 Live View <i class="fa fa-globe" aria-hidden="true"></i>
@@ -312,7 +99,7 @@
               <a
                 :href="'https://github.com/denksy/' + project.url"
                 type="button"
-                class="btn btn-outline-primary"
+                class="btn btn-outline-teal"
                 target="_blank"
               >
                 Source <i class="fab fa-github" aria-hidden="true"></i>
@@ -323,15 +110,12 @@
       </div>
     </div>
   </MainContent>
-  <RightSideNav />
 </template>
 
 <script>
-import RightSideNav from "../components/RightSideNav";
 import MainContent from "../components/MainContent";
 export default {
   components: {
-    RightSideNav,
     MainContent,
   },
   data() {
@@ -386,6 +170,23 @@ export default {
             "My first web app with CRUD functionality. The To-do lists and items are saved locally in the browser and I also added a Notes section. I made this using Vue.js.",
         },
       ],
+      pens: [
+        { title: "#63", url: "BaQQLON" },
+        { title: "#7", url: "WNoZyQK" },
+        { title: "#1", url: "rNWmNxZ" },
+        { title: "#2", url: "QWGvVvJ" },
+        { title: "#3", url: "qBqjVeW" },
+        { title: "#4", url: "XWNgoev" },
+        { title: "#5", url: "rNWzzzR" },
+        { title: "#6-Notification", url: "mdOBdya" },
+        { title: "#8-Raining", url: "vYyWgpV" },
+        { title: "#9", url: "eYByZRX" },
+        { title: "#12", url: "BaQxdQq" },
+        { title: "#13- Bike &amp; Ship", url: "LYbrzqM" },
+        { title: "#14- Upload", url: "QWGBXav" },
+        { title: "#15 - Shapes", url: "rNWZPaN" },
+        { title: "#16", url: "yLVGoPo" },
+      ],
     };
   },
   methods: {
@@ -398,8 +199,12 @@ export default {
 
 <style>
 iframe {
-  background: #bad7df !important;
-  width: 100%;
+  width: 410px;
   height: 500px;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
 }
 </style>
