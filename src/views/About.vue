@@ -2,7 +2,7 @@
   <MainContent>
     <h1 class="title">A little bit about me</h1>
     <div class="container p-5 mt-3">
-      <p class="text-p">
+      <p class="text-p fs-5">
         <img src="../assets/temp.jpeg" alt="profile-pic" class="profile" />
         I’m a graduate of Electronics Engineering and I’ve taken an interest in
         developing websites. I started studying front-end web development last
@@ -12,7 +12,7 @@
         far.
       </p>
       <br />
-      <p class="text-p">
+      <p class="text-p fs-5">
         I’ve resumed studying web development this year and I’m currently
         learning the basics of back-end development in Udemy. I aim to study web
         development continously and I’m excited to get the point where I can
@@ -20,18 +20,18 @@
         learning it.
       </p>
     </div>
-    <h1 class="title text-end">Tools I've used so far</h1>
+    <h1 class="title text-start">Tools I've used so far</h1>
     <div class="container p-5 d-flex justify-content-center mt-3">
-      <div class="row row-cols-xl-4 row-cols-xs-2 justify-content-around w-500">
+      <div class="row row-cols-xl-4 row-cols-xs-2 justify-content-around w-50">
         <div
-          class="logo col-3 mt-3"
+          class="logo col-3 mt-4 text-center"
           v-for="(logo, index) in logos"
           :key="logo"
           @mouseover="showTooltip(index)"
           @mouseleave="hideTooltip(index)"
           @mousemove="followCursor($event, logo)"
         >
-          <img :src="getLogo(logo)" :alt="logo + '-logo'" class="w-100" />
+          <img :src="getLogo(logo)" :alt="logo + '-logo'" class="w-75" />
           <span
             class="tooltip_c"
             :class="{ visible: tooltip[index] }"
@@ -57,12 +57,13 @@ export default {
         "html5.svg",
         "css3.png",
         "javascript.svg",
+        "sass.svg",
         "jquery.svg",
         "bootstrap.svg",
         "vue.png",
         "git.png",
       ],
-      tooltip: [false, false, false, false, false, false, false],
+      tooltip: [false, false, false, false, false, false, false, false],
     };
   },
   methods: {
@@ -118,10 +119,6 @@ export default {
 .text-p {
   font-size: 1.6rem;
   font-weight: 300;
-}
-
-.w-500 {
-  width: 500px;
 }
 
 .logo {

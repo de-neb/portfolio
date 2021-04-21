@@ -10,7 +10,7 @@ html {
   text-align: center;
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
+  overflow-x: hidden;
   background: #232931 !important;
 }
 
@@ -43,52 +43,22 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 250px;
+  width: 100%;
 }
 
 #nav a {
   font-size: 36px;
   line-height: 36px;
   color: #4ecca3;
-  font-family: "Anonymous Pro", monospace;
-  margin-bottom: 36px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: 100%;
   text-decoration: none !important;
   position: relative;
   z-index: 2;
 }
 
-#nav a:hover {
+#nav a:hover.link {
   color: #232931;
-}
-
-#nav a:hover:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
   background: #4ecca3;
-  -webkit-animation: dash 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79) forwards;
-          animation: dash 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79) forwards;
-  z-index: -1;
-}
-
-#nav a:not(:hover):after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 100%;
-  background: #4ecca3;
-  width: 100%;
-  -webkit-animation: dash-off 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79) forwards;
-          animation: dash-off 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79) forwards;
-  z-index: -1;
 }
 
 #nav a.router-link-exact-active {
@@ -97,62 +67,50 @@ html {
 
 #nav a.router-link-exact-active span {
   border-right: 2px solid transparent;
-  -webkit-animation: blink-white 0.75s step-end infinite;
-          animation: blink-white 0.75s step-end infinite;
+  -webkit-animation: blink-caret 0.75s step-end infinite;
+          animation: blink-caret 0.75s step-end infinite;
 }
 
-@-webkit-keyframes dash {
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes dash {
-  to {
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes dash-off {
-  to {
-    width: 0%;
-  }
-}
-
-@keyframes dash-off {
-  to {
-    width: 0%;
-  }
-}
-
-@-webkit-keyframes blink-white {
+@-webkit-keyframes blink-caret {
   50% {
     border-color: #eee;
   }
 }
 
-@keyframes blink-white {
+@keyframes blink-caret {
   50% {
     border-color: #eee;
   }
 }
 
 .side-nav {
-  width: auto;
+  width: 18vw;
   height: 100vh;
   background: #232931;
   color: #4ecca3;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
+  z-index: 20;
 }
 
 .nav-title {
   font-size: 75px;
   font-family: "Anonymous Pro", monospace;
   font-weight: 300;
-  overflow: hidden;
   letter-spacing: 3px;
-  line-height: 60px;
+  word-wrap: break-word;
+  line-height: 65px;
+  opacity: 0;
+  -webkit-animation: fade-in 0.5s 1s ease-in forwards;
+          animation: fade-in 0.5s 1s ease-in forwards;
+}
+
+.home-title {
+  font-size: 86px;
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 300;
+  letter-spacing: 3px;
 }
 
 .caret {
@@ -164,15 +122,16 @@ html {
 .sub-text {
   font-family: "Anonymous Pro", monospace;
   font-size: 1.2rem;
+  word-wrap: break-word;
   opacity: 0;
-  -webkit-animation: fade-in 0.5s 2.2s ease-in forwards;
-          animation: fade-in 0.5s 2.2s ease-in forwards;
+  -webkit-animation: fade-in 0.5s 1s ease-in forwards;
+          animation: fade-in 0.5s 1s ease-in forwards;
 }
 
 .nav {
   opacity: 0;
-  -webkit-animation: fade-in 0.5s 2.5s ease-in forwards;
-          animation: fade-in 0.5s 2.5s ease-in forwards;
+  -webkit-animation: fade-in 0.5s 1.5s ease-in forwards;
+          animation: fade-in 0.5s 1.5s ease-in forwards;
 }
 
 .fade-in {
@@ -244,18 +203,12 @@ html {
 }
 
 @-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
   to {
     opacity: 1;
   }
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
   to {
     opacity: 1;
   }
@@ -310,5 +263,39 @@ html {
 .btn-outline-teal:hover {
   background: #4ecca3 !important;
   color: #232931 !important;
+}
+
+.badge-white {
+  border: 1px solid #eee !important;
+  color: #eee !important;
+  border-radius: 100px !important;
+}
+
+.email {
+  color: #eee !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.email:hover {
+  color: #4ecca3 !important;
+}
+
+.scroll-up {
+  border: 1px solid #4ecca3;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 50%;
+  color: #4ecca3;
+  position: fixed;
+  bottom: 70px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.scroll-up:hover {
+  background: #4ecca3;
+  color: #232931;
 }
 /*# sourceMappingURL=styles.css.map */

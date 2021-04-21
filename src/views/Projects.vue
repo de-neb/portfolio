@@ -68,7 +68,7 @@
         </button>
       </div>
     </div>
-    <h1 class="title text-end mt-5">Projetcs I made so far</h1>
+    <h1 class="title text-start mt-5">Projetcs</h1>
     <div class="container p-5 mt-3 d-flex justify-content-center">
       <div class="row mt-5 justify-content-evenly gap-1">
         <div
@@ -86,6 +86,12 @@
             <p class="card-text">
               {{ project.text }}
             </p>
+            <span
+              class="badge badge-white mb-3 px-3 mx-1 fs-6"
+              v-for="tool in project.tools"
+              :key="tool"
+              >{{ tool }}</span
+            >
             <div class="row row-cols-auto justify-content-center gap-2">
               <a
                 :href="'https://denksy.github.io/' + project.url"
@@ -125,49 +131,57 @@ export default {
           title: "Google Landing Page",
           url: "google-homepage",
           text:
-            "I recreated Google's home page using HTML and CSS. No Javascript functionalities were added.",
+            "I recreated Google's home page top practice HTML and CSS. No Javascript functionalities were added.",
+          tools: ["HTML", "CSS"],
         },
         {
           title: "Tindog",
           url: "Tindog",
           text:
-            "Created a landing page for an imaginary app, Tindog usingHTML and Bootstrap.",
+            "Created a landing page for a product, Tindog using HTML and Bootstrap.",
+          tools: ["HTML", "Bootstrap"],
         },
         {
           title: "Python Documentation",
           url: "python-documentation",
           text:
-            "This is one of Freecodecamp's required project from Responsive Web Design Projects using HTML and CSS.",
+            "A 'not complete' Technical Documentation to practice using media queries and creating a responsive web design.",
+          tools: ["HTML", "CSS"],
         },
         {
           title: "Youtube (embedding video and images)",
           url: "youtube-homepage",
           text:
             "Recreated Youtube's video content page where I used grid and flex displays. I also made it responsive.",
+          tools: ["HTML", "CSS"],
         },
         {
           title: "Survey Form",
           url: "Survey-Form",
           text:
             "A simple survey form. This is created to pratice creating forms and using diffrent inputs.",
+          tools: ["HTML", "CSS"],
         },
         {
           title: "Simon Game",
           url: "Simon",
           text:
             "This is my very first game with an actual graphics. I used jQuery on this one.",
+          tools: ["HTML", "CSS", "Javascript", "jQuery"],
         },
         {
           title: "Roll the Dice",
           url: "roll-dice",
           text:
             "Created this project to practice Document Object Model manipulation using vanilla Javascript.",
+          tools: ["HTML", "CSS", "Javascript"],
         },
         {
           title: "To-do List",
           url: "To-do-list",
           text:
             "My first web app with CRUD functionality. The To-do lists and items are saved locally in the browser and I also added a Notes section. I made this using Vue.js.",
+          tools: ["HTML", "CSS", "Javascript", "Vue", "Sass"],
         },
       ],
       pens: [

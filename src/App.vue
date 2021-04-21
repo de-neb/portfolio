@@ -1,6 +1,6 @@
 <template>
-  <SideNav />
-  <div class="hr"></div>
+  <SideNav v-if="$route.name !== 'Home'" />
+  <!-- <div class="hr" v-if="$route.name != 'Home'"></div> -->
   <router-view />
 </template>
 
