@@ -1,5 +1,5 @@
 <template>
-  <div class="home w-50 text-teal">
+  <div class="home text-teal">
     <h1 class="home-title text-center" ref="home-greet">
       <span class="caret" ref="caret0"></span>
     </h1>
@@ -7,7 +7,7 @@
       <span class="" ref="caret1"></span>
     </h2>
     <div
-      class="container-fluid d-flex align-items-center justify-content-center gap-5 mt-5"
+      class="container-fluid d-flex align-items-center justify-content-center position-relative gap-0 mt-5"
     >
       <Navigation id="nav" class="fs-2 d-flex flex-column fade-in" />
       <Illustration class="illus inline-block" />
@@ -57,6 +57,7 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 90%;
 }
 
 #nav {
@@ -65,5 +66,33 @@ export default {
 
 .fade-in {
   animation-delay: 5s !important;
+}
+
+svg {
+  min-width: 350px;
+}
+
+@media (max-width: 615px) {
+  .home-title {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 505px) {
+  .home-title,
+  .nav-title {
+    font-size: 60px;
+  }
+  svg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    opacity: 0.6;
+  }
+  #nav {
+    margin-right: auto;
+  }
 }
 </style>

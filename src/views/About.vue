@@ -1,6 +1,6 @@
 <template>
   <MainContent>
-    <h1 class="title">A little bit about me</h1>
+    <h1 class="title px-3">A little bit about me</h1>
     <div class="container p-5 mt-3">
       <p class="text-p fs-5">
         <img src="../assets/temp.jpeg" alt="profile-pic" class="profile" />
@@ -20,21 +20,27 @@
         learning it.
       </p>
     </div>
-    <h1 class="title text-start">Tools I've used so far</h1>
-    <div class="container p-5 d-flex justify-content-center mt-3">
-      <div class="row row-cols-xl-4 row-cols-xs-2 justify-content-around w-50">
+    <h1 class="title text-start px-3">Tools I've used so far</h1>
+    <div class="container p-1 py-5 d-flex justify-content-center mt-3">
+      <div class="row row-cols-1 justify-content-around w-500">
         <div
-          class="logo col-3 mt-4 text-center"
+          class="logo col-3 text-center"
           v-for="(logo, index) in logos"
           :key="logo"
+          :class="{ 'mt-4': index > 3 }"
           @mouseover="showTooltip(index)"
           @mouseleave="hideTooltip(index)"
           @mousemove="followCursor($event, logo)"
         >
           <img :src="getLogo(logo)" :alt="logo + '-logo'" class="w-75" />
           <span
-            class="tooltip_c"
-            :class="{ visible: tooltip[index] }"
+            class="mt-2 fw-bold badge-white"
+            :class="{
+              visible: tooltip[index],
+              tooltip_c: windowWidth > 975,
+              'd-block': windowWidth <= 975,
+              'logo-name': windowWidth < 425,
+            }"
             :id="logo + '-tooltip'"
             >{{ logo.replace(/.png|.svg/, "").toUpperCase() }}</span
           >
@@ -64,6 +70,7 @@ export default {
         "git.png",
       ],
       tooltip: [false, false, false, false, false, false, false, false],
+      windowWidth: window.innerWidth,
     };
   },
   methods: {
@@ -82,7 +89,16 @@ export default {
       tooltipId.style.top = e.pageY + 10 + "px";
     },
   },
-  updated() {},
+  mounted() {
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth;
+    };
+  },
+  watch: {
+    windowWidth() {
+      console.log(this.windowWidth);
+    },
+  },
 };
 </script>
 
@@ -98,7 +114,8 @@ export default {
 }
 
 .container {
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   text-align: left;
   border-left: 1px solid #4ecca3;
   background: #2d3137;
@@ -147,5 +164,13 @@ export default {
 
 .container div:nth-child(2) {
   justify-content: space-evenly;
+}
+
+.w-500 {
+  width: 500px;
+}
+
+.logo-name {
+  font-size: 13px;
 }
 </style>

@@ -1,9 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Inconsolata:wdth,wght@75,300;100,300&family=Roboto+Mono:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@200&family=Inconsolata:wdth,wght@75,300;100,300&family=Roboto+Mono:wght@300&display=swap");
 
 $black: #232931;
 $teal: #4ecca3;
 $white: #eee;
 $bezier: cubic-bezier(0.22, 0.65, 0.09, 0.79);
+$timing: cubic-bezier(0.39, 0.97, 0, 0.97);
+$mc-width: 80vw;
+$title-font: "Fira Code", monospace;
 //
 
 * {
@@ -45,6 +48,8 @@ html {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+  z-index: 20;
 }
 
 #nav a {
@@ -79,20 +84,26 @@ html {
 
 //Home
 .side-nav {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
   width: 18vw;
-  height: 100vh;
+  height: 90vh;
   background: #232931;
   color: #4ecca3;
   box-sizing: border-box;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
   z-index: 20;
 }
 
 .nav-title {
-  font-size: 75px;
-  font-family: "Anonymous Pro", monospace;
-  font-weight: 300;
-  letter-spacing: 3px;
+  font-size: 60px;
+  font-family: $title-font;
+  letter-spacing: 0;
   word-wrap: break-word;
   line-height: 65px;
   opacity: 0;
@@ -101,8 +112,7 @@ html {
 
 .home-title {
   font-size: 86px;
-  font-family: "Anonymous Pro", monospace;
-  font-weight: 300;
+  font-family: $title-font;
   letter-spacing: 3px;
 }
 
@@ -112,7 +122,7 @@ html {
 }
 
 .sub-text {
-  font-family: "Anonymous Pro", monospace;
+  font-family: $title-font;
   font-size: 1.2rem;
   word-wrap: break-word;
   opacity: 0;
@@ -158,15 +168,6 @@ html {
 @keyframes fade-in {
   to {
     opacity: 1;
-  }
-}
-
-@keyframes slide-left {
-  from {
-    width: 0;
-  }
-  to {
-    width: 80vw;
   }
 }
 
@@ -226,11 +227,263 @@ html {
   border-radius: 50%;
   color: $teal;
   position: fixed;
-  bottom: 70px;
   right: 15px;
+  bottom: 0;
   cursor: pointer;
   &:hover {
     background: $teal;
     color: $black;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.slide-up-scroll {
+  animation: slide-up-scroll 0.7s $bezier forwards;
+}
+
+.slide-down-scroll {
+  animation: slide-down-scroll 0.7s $bezier forwards;
+}
+
+.main-content {
+  background: #232931;
+  width: 80vw;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -45vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-left: 1px solid #4ecca3;
+  animation: slide-down 0.5s forwards;
+  scroll-behavior: smooth !important;
+}
+
+/* //scrollbar style */
+.main-content::-webkit-scrollbar {
+  background: #232931;
+  width: 3px;
+}
+
+/* Handle */
+.main-content::-webkit-scrollbar-thumb {
+  background: #4ecca3;
+}
+
+//menu icon
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  z-index: 150;
+  opacity: 0;
+  transition: opacity 0.5s $bezier, top 0.5s $bezier;
+  .burger-check {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    margin: 0;
+    opacity: 0;
+    outline: none;
+    cursor: pointer;
+    &:checked {
+      & ~ .burger div:nth-child(1) {
+        animation: down 0.5s $timing forwards;
+      }
+      & ~ .burger div:nth-child(2) {
+        animation: gone 0.5s $timing forwards;
+      }
+      & ~ .burger div:nth-child(3) {
+        animation: up 0.5s $timing forwards;
+      }
+    }
+
+    &:not(:checked) {
+      & ~ .burger div:nth-child(1) {
+        animation: rev-up 0.5s $timing forwards;
+      }
+      & ~ .burger div:nth-child(2) {
+        animation: rev-appear 0.5s $timing forwards;
+      }
+      & ~ .burger div:nth-child(3) {
+        animation: rev-down 0.5s $timing forwards;
+      }
+    }
+  }
+  .burger {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .bar {
+      width: 35px;
+      height: 3px;
+      position: relative;
+      margin: 0 auto 5px;
+      border-radius: 50px;
+      background: $teal;
+    }
+  }
+}
+//MainContent animations
+@keyframes slide-down-scroll {
+  from {
+    bottom: 70px;
+  }
+  to {
+    opacity: 0;
+    bottom: 0;
+  }
+}
+
+@keyframes slide-up-scroll {
+  to {
+    opacity: 1;
+    bottom: 70px;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: 90vh;
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(8px) rotate(45deg);
+  }
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(-8px) rotate(135deg);
+  }
+}
+
+@keyframes gone {
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes rev-up {
+  0% {
+    transform: translateY(8px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes rev-down {
+  0% {
+    transform: translateY(-8px) rotate(135deg);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes rev-appear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Media queries
+@media (max-width: 1470px) {
+  .main-content {
+    width: 75vw;
+  }
+  .side-nav {
+    width: 23vw;
+  }
+  #project-carousel {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .main-content {
+    width: 70vw;
+  }
+  .side-nav {
+    width: 27vw;
+  }
+  #project-carousel {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 975px) {
+  .side-nav {
+    opacity: 0;
+    width: 0;
+    transition: opacity 0.5s $timing, width 0.5s $timing;
+  }
+  .main-content {
+    width: 100vw;
+    padding: 30px;
+  }
+  .menu {
+    opacity: 1;
+    top: 50px;
+    transition: opacity 0.5s $bezier, top 0.5s $bezier;
+  }
+  .show-side-nav {
+    opacity: 1;
+    width: 350px;
+    z-index: 120;
+    border-right: 1px solid $teal;
+    border-left: 1px solid $teal;
+    transition: opacity 0.5s $timing, width 0.5s $timing;
+  }
+}
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 45px !important;
+  }
+}
+
+@media (max-width: 570px) {
+  .title {
+    font-size: 40px !important;
   }
 }

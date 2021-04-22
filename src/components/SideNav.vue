@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="side-nav d-flex justify-content-center align-items-start flex-column ms-4"
-  >
+  <div class="side-nav ms-xl-2 ms-lg-2 ms-md-0 px-sm-1 px-1">
     <h1 class="nav-title text-wrap text-start">Hi I'm Eden</h1>
     <h2 class="sub-text mt-2 text-start" id="subtext">
       aspiring to become a Web Developer
@@ -24,7 +22,7 @@ export default {
 .illus-bg {
   opacity: 0;
   position: absolute;
-  bottom: 25%;
+  bottom: 180px;
   z-index: -1;
   animation: fade-in 1s 0.5s ease-in forwards;
 }

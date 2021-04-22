@@ -8,7 +8,9 @@
       entries and some of these are interactive when clicked or hovered while
       some are pure animation.
     </p>
-    <div class="container p-5 d-flex justify-content-center mb-5">
+    <div
+      class="container m-0 p-xl-5 p-lg-5 p-md-3 p-sm-0 d-flex justify-content-center mb-5"
+    >
       <div
         id="project-carousel"
         class="carousel slide carousel-dark carousel-fade w-75"
@@ -69,12 +71,13 @@
       </div>
     </div>
     <h1 class="title text-start mt-5">Projetcs</h1>
-    <div class="container p-5 mt-3 d-flex justify-content-center">
+    <div class="container p-5 p-md-2 p-sm-1 mt-3 d-flex justify-content-center">
       <div class="row mt-5 justify-content-evenly gap-1">
         <div
-          class="card bg-teal mb-5 col-xxl-5 col-xl-5 col-lg-4 col-md-9 col-sm-9 col-9"
-          v-for="project in projects"
+          class="card bg-teal mb-5 col-xxl-5 col-xl-5 col-lg-8 col-md-5 col-sm-10 col-11"
+          v-for="(project, i) in projects"
           :key="project.url"
+          :class="{ 'col-md-6': i === projects.length - 1 }"
         >
           <img
             :src="getImg(project.url)"
@@ -166,7 +169,7 @@ export default {
           title: "Simon Game",
           url: "Simon",
           text:
-            "This is my very first game with an actual graphics. I used jQuery on this one.",
+            "This is my first game with an actual graphics. I used jQuery on this one.",
           tools: ["HTML", "CSS", "Javascript", "jQuery"],
         },
         {
@@ -177,10 +180,17 @@ export default {
           tools: ["HTML", "CSS", "Javascript"],
         },
         {
+          title: "Reaction Timer",
+          url: "reaction-timer",
+          text:
+            "My first project using Vue and it's CLI. It measures how quickly you can click the block.",
+          tools: ["HTML", "CSS", "Vue"],
+        },
+        {
           title: "To-do List",
           url: "To-do-list",
           text:
-            "My first web app with CRUD functionality. The To-do lists and items are saved locally in the browser and I also added a Notes section. I made this using Vue.js.",
+            "My first web app with CRUD functionality. You can create a 'task list' and add 'to-do' items inside. You can also set a 'to-do' item's priority, date and details. Each task list and its items are saved locally in the browser, so it can be accessed again when visiting the page. I also added a function that let's you add notes.",
           tools: ["HTML", "CSS", "Javascript", "Vue", "Sass"],
         },
       ],

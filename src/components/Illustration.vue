@@ -1,6 +1,6 @@
 <template>
   <svg
-    width="410"
+    width="480"
     height="237"
     viewBox="0 0 410 237"
     fill="none"
@@ -79,7 +79,7 @@
       y="80.4611"
       width="8"
       height="17"
-      rx="4.22666"
+      rx="2"
       fill="#4ECCA3"
       class="eyes"
     />
@@ -88,7 +88,7 @@
       y="80.4611"
       width="8"
       height="17"
-      rx="4.22666"
+      rx="2"
       fill="#4ECCA3"
       class="eyes"
     />
