@@ -95,4 +95,11 @@ svg {
     margin-right: auto;
   }
 }
+
+@media (max-width: 480px) {
+  .home-title,
+  .nav-title {
+    font-size: 55px;
+  }
+}
 </style>

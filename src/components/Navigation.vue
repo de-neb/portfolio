@@ -5,6 +5,7 @@
       v-for="link in navLinks"
       :key="link"
       :to="getLink(link)"
+      @click="sendToSideNav"
       >{{ link }}<span></span
     ></router-link>
     <div class="info text-start">
@@ -16,7 +17,7 @@
         ><i class="fab fa-codepen fa-1x"></i
       ></a>
 
-      <a class="fs-2 email" href="mailto:edenbaui@outlook.com"
+      <a class="email" href="mailto:edenbaui@outlook.com"
         ><i class="fas fa-envelope fa-1x"></i
       ></a>
     </div>
@@ -34,6 +35,9 @@ export default {
   methods: {
     getLink(link) {
       return link === "Home" ? "/" : "/" + link.toLowerCase();
+    },
+    sendToSideNav() {
+      this.$emit("link-clicked");
     },
   },
 };

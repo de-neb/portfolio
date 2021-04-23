@@ -4,7 +4,7 @@
     <h2 class="sub-text mt-2 text-start" id="subtext">
       aspiring to become a Web Developer
     </h2>
-    <Navigation class="nav mt-4" />
+    <Navigation class="nav mt-4" @link-clicked="sendToApp" />
     <Illustration class="w-100 illus-bg" />
   </div>
 </template>
@@ -15,6 +15,11 @@ import Illustration from "./Illustration";
 export default {
   name: "SideNav",
   components: { Navigation, Illustration },
+  methods: {
+    sendToApp() {
+      this.$emit("clicked");
+    },
+  },
 };
 </script>
 
@@ -22,14 +27,14 @@ export default {
 .illus-bg {
   opacity: 0;
   position: absolute;
-  bottom: 180px;
+  top: 50%;
   z-index: -1;
   animation: fade-in 1s 0.5s ease-in forwards;
 }
 
 @keyframes fade-in {
   to {
-    opacity: 0.6;
+    opacity: 0.9;
   }
 }
 </style>

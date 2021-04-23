@@ -1,7 +1,7 @@
 <template>
   <MainContent>
     <h1 class="title">Challenges from 100 Days CSS Challenges</h1>
-    <p class="text-start mt-3 fs-5 fw-light fade-in">
+    <p class="text-start mt-3 fs-5 fw-light fade-in light-theme-text">
       I did this challenge in order to pratice and discover some techniques in
       CSS. From the title itself there are 100 challenges where I needed to
       create an exact replica of the challenge for the day. So far I've made 15
@@ -9,14 +9,14 @@
       some are pure animation.
     </p>
     <div
-      class="container m-0 p-xl-5 p-lg-5 p-md-3 p-sm-0 d-flex justify-content-center mb-5"
+      class="container m-0 p-xl-5 p-lg-5 p-md-3 py-sm-3 px-sm-0 d-flex justify-content-center mb-5"
     >
       <div
         id="project-carousel"
         class="carousel slide carousel-dark carousel-fade w-75"
         data-bs-ride="carousel"
       >
-        <div class="carousel-indicators">
+        <div class="carousel-indicators mx-0">
           <button
             data-bs-target="#project-carousel"
             v-for="(el, i) in pens"
@@ -74,7 +74,7 @@
     <div class="container p-5 p-md-2 p-sm-1 mt-3 d-flex justify-content-center">
       <div class="row mt-5 justify-content-evenly gap-1">
         <div
-          class="card bg-teal mb-5 col-xxl-5 col-xl-5 col-lg-8 col-md-5 col-sm-10 col-11"
+          class="card bg-teal mb-5 col-xxl-4 col-xl-5 col-lg-7 col-md-5 col-sm-9 col-12"
           v-for="(project, i) in projects"
           :key="project.url"
           :class="{ 'col-md-6': i === projects.length - 1 }"
@@ -86,7 +86,7 @@
           />
           <div class="card-body">
             <h5 class="card-title text-teal fw-bold">{{ project.title }}</h5>
-            <p class="card-text">
+            <p class="card-text light-theme-text">
               {{ project.text }}
             </p>
             <span
@@ -99,7 +99,7 @@
               <a
                 :href="'https://denksy.github.io/' + project.url"
                 type="button"
-                class="btn btn-outline-teal"
+                class="btn btn-outline-teal light-theme-text"
                 target="_blank"
               >
                 Live View <i class="fa fa-globe" aria-hidden="true"></i>
@@ -108,7 +108,7 @@
               <a
                 :href="'https://github.com/denksy/' + project.url"
                 type="button"
-                class="btn btn-outline-teal"
+                class="btn btn-outline-teal light-theme-text"
                 target="_blank"
               >
                 Source <i class="fab fa-github" aria-hidden="true"></i>
