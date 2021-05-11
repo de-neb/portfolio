@@ -1,24 +1,20 @@
-name: Deploy to github pages
+name: Deploy to Github Pages
 on:
   push:
     branches:
       - main
 jobs:
   gh-pages-deploy:
-    name: Deploying to gh-pages
+    name: Deploying to Github Pages
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node.js for use with actions
-        uses: actions/setup-node@v1.1.0
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          version: 12.x
-      - name: Checkout branch
-        uses: actions/checkout@v2
-
-      - name: Clean install dependencies
-        run: npm ci
-
-      - name: Run deploy script
-        run: |
-          git config user.name "denksy" && git config user.email ""
-          npm run gh-pages-deploy
+          node-version: "12"
+      - name: Install packages
+        run: npm i
+      - name: Set Creds
+        run: git config user.name "denksy" && git config user.email "eedenbaui@gmail.com"
+      - name: Deploy
+        run: npm run deploy
