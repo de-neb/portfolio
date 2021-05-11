@@ -2,7 +2,7 @@
   <MainContent>
     <h1 class="title">Challenges from 100 Days CSS Challenges</h1>
     <p class="text-start mt-3 fs-5 fw-light fade-in light-theme-text">
-      I did this challenge in order to pratice and discover some techniques in
+      I did this challenge in order to practice and discover some techniques in
       CSS. From the title itself there are 100 challenges where I needed to
       create an exact replica of the challenge for the day. So far I've made 15
       entries and some of these are interactive when clicked or hovered while
@@ -138,7 +138,7 @@ export default {
           title: "Google Landing Page",
           url: "google-homepage",
           text:
-            "I recreated Google's home page top practice HTML and CSS. No Javascript functionalities were added.",
+            "I recreated Google's home page to practice HTML and CSS. No Javascript functionalities were added.",
           tools: ["HTML", "CSS"],
         },
         {
