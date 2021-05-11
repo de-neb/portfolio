@@ -97,7 +97,11 @@
             >
             <div class="row row-cols-auto justify-content-center gap-2">
               <a
-                :href="'https://denksy.github.io/' + project.url"
+                :href="
+                  !project.heroku
+                    ? 'https://denksy.github.io/' + project.url
+                    : project.herokuUrl
+                "
                 type="button"
                 class="btn btn-outline-teal light-theme-text"
                 target="_blank"
@@ -192,6 +196,32 @@ export default {
           text:
             "My first web app with CRUD functionality. You can create a 'task list' and add 'to-do' items inside. You can also set a 'to-do' item's priority, date and details. Each task list and its items are saved locally in the browser, so it can be accessed again when visiting the page. I also added a function that let's you add notes.",
           tools: ["HTML", "CSS", "Javascript", "Vue", "Sass"],
+        },
+        {
+          title: "Newsletter Sign Up",
+          url: "newsletter-signup",
+          text:
+            "This is created after learning some of the basics in Node.js and using an API particularly Mailchimp's Marketing API.",
+          tools: ["HTML", "CSS", "Javascript", "Bootstrap", "Node.js"],
+          heroku: true,
+          herokuUrl: "https://owl-newsletter-signup.herokuapp.com/",
+        },
+        {
+          title: "Weather for Today",
+          url: "weather-project",
+          text:
+            "This web app uses OpenWeatherMap API for getting the weather data and Geolocation API for detecting the user's location. I also used Node.js for handling requests in the server and deployed the web app in Heroku. You can search the weather updates of any location or allow the app to pinpoint your location (though low accuracy for now). I wanted to try creating backgrounds for this project so I made a night and day backgrounds using Figma. The style is heavily influenced by Kurzgesagt art style.",
+          tools: [
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Bootstrap",
+            "Sass",
+            "Node.js",
+            "EJS",
+          ],
+          heroku: true,
+          herokuUrl: "https://weather-4-today.herokuapp.com/",
         },
       ],
       pens: [
