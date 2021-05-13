@@ -194,7 +194,7 @@ export default {
           title: "To-do List",
           url: "To-do-list",
           text:
-            "My first web app with CRUD functionality. You can create a 'task list' and add 'to-do' items inside. You can also set a 'to-do' item's priority, date and details. Each task list and its items are saved locally in the browser, so it can be accessed again when visiting the page. I also added a function that let's you add notes.",
+            "My first web app with CRUD functionality. You can create a 'task list' and add 'to-do' items inside. You can also set a 'to-do' item's priority, date and details. Each task list and its items are saved locally in the browser, so it can be accessed again when visiting the page. I also added a notes section.",
           tools: ["HTML", "CSS", "Javascript", "Vue", "Sass"],
         },
         {
@@ -205,6 +205,13 @@ export default {
           tools: ["HTML", "CSS", "Javascript", "Bootstrap", "Node.js"],
           heroku: true,
           herokuUrl: "https://owl-newsletter-signup.herokuapp.com/",
+        },
+        {
+          title: "Portfolio v2",
+          url: "web-portfolio-v2",
+          text:
+            "I decided to improved my first portfolio using Vue and after learning the set up for Vue's routes. I think using Vue made my code more readable and organized compared on my first portfolio where I just used pure HTML, CSS and Javascript. Although, I also think that the same could still be achieved if I didn't use any framework like Vue it's just that I'll be seeing probably a lot of HTML elements in my Javascript file. In this version I only used three colors for my color scheme and went for a very simple design. I also added a light and dark theme.",
+          tools: ["HTML", "CSS", "Sass", "Bootstrap", "Vue"],
         },
         {
           title: "Weather for Today",

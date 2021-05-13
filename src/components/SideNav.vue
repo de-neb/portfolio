@@ -1,7 +1,7 @@
 <template>
   <div class="side-nav ms-xl-2 ms-lg-2 ms-md-0 px-sm-1 px-1">
-    <h1 class="nav-title text-wrap text-start">Hi I'm Eden</h1>
-    <h2 class="sub-text mt-2 text-start" id="subtext">
+    <h1 class="nav-title text-wrap text-center">Hi I'm Eden</h1>
+    <h2 class="sub-text mt-2 text-center" id="subtext">
       aspiring to become a Web Developer
     </h2>
     <Navigation class="nav mt-4" @link-clicked="sendToApp" />
@@ -33,7 +33,13 @@ export default {
 }
 
 .side-nav {
-  min-height: -webkit-fill-available;
+  min-height: -webkit-fill-available !important;
+}
+
+@media (max-width: 450px) {
+  .side-nav {
+    width: 100% !important;
+  }
 }
 
 @keyframes fade-in {

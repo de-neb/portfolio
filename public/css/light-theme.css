@@ -183,7 +183,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   width: 18vw;
-  height: 100vh;
+  height: -webkit-fill-available;
   background: #4ecca3;
   color: #232931;
   -webkit-box-sizing: border-box;
