@@ -37,7 +37,7 @@ export default {
     return {
       navLinks: ["Home", "About", "Projects"],
       pdfLink:
-        "https://raw.githubusercontent.com/denksy/web-portfolio-v2/65cc881f55c89702f333f9203d90ef043de8e287/resume/resume-eden-baui.pdf",
+        "https://raw.githubusercontent.com/denksy/web-portfolio-v2/main/resume/eden-baui-resume.pdf",
     };
   },
   methods: {
