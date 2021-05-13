@@ -32,6 +32,10 @@ export default {
   animation: fade-in 1s 0.5s ease-in forwards;
 }
 
+.side-nav {
+  min-height: -webkit-fill-available;
+}
+
 @keyframes fade-in {
   to {
     opacity: 0.9;
