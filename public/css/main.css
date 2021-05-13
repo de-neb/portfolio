@@ -162,7 +162,7 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 18vw;
-  height: -webkit-fill-available;
+  height: 100vh;
   background: #232931;
   color: #4ecca3;
   -webkit-box-sizing: border-box;
@@ -1009,7 +1009,7 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 18vw;
-  height: -webkit-fill-available;
+  height: 100vh;
   background: #4ecca3;
   color: #232931;
   -webkit-box-sizing: border-box;

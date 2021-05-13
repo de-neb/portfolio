@@ -36,12 +36,6 @@ export default {
   min-height: -webkit-fill-available !important;
 }
 
-@media (max-width: 450px) {
-  .side-nav {
-    width: 100% !important;
-  }
-}
-
 @keyframes fade-in {
   to {
     opacity: 0.9;

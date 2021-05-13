@@ -88,3 +88,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.send-backwards {
+  z-index: -1;
+}
+</style>
