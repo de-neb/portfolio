@@ -31,15 +31,15 @@
 .light-theme .switch-position {
   position: fixed;
   top: 0;
-  right: 10px;
+  right: 0;
   z-index: 15;
 }
 
 .light-theme .switch-position .switch-body {
   position: relative;
   margin: auto;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   color: #232931;
 }
@@ -49,7 +49,7 @@
   top: 0;
   left: 0;
   width: inherit;
-  height: 40px;
+  height: inherit;
   opacity: 0;
   z-index: 16;
   cursor: pointer;
@@ -74,8 +74,8 @@
 }
 
 .light-theme .switch-position .switch-body .switch {
-  width: 40px;
-  height: 40px;
+  width: inherit;
+  height: inherit;
   position: absolute;
   left: 0;
   border-radius: 50%;
@@ -825,7 +825,7 @@
   }
   .light-theme .menu {
     opacity: 1;
-    top: 10px;
+    top: 0;
     -webkit-transition: opacity 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79), top 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79);
     transition: opacity 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79), top 0.5s cubic-bezier(0.22, 0.65, 0.09, 0.79);
   }

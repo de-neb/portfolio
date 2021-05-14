@@ -27,13 +27,13 @@
   .switch-position {
     position: fixed;
     top: 0;
-    right: 10px;
+    right: 0;
     z-index: 15;
     .switch-body {
       position: relative;
       margin: auto;
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       color: $black-lt;
       #checkbox {
@@ -41,7 +41,7 @@
         top: 0;
         left: 0;
         width: inherit;
-        height: 40px;
+        height: inherit;
         opacity: 0;
         z-index: 16;
         cursor: pointer;
@@ -59,8 +59,8 @@
         }
       }
       .switch {
-        width: 40px;
-        height: 40px;
+        width: inherit;
+        height: inherit;
         position: absolute;
         left: 0;
         border-radius: 50%;
@@ -593,7 +593,7 @@
     }
     .menu {
       opacity: 1;
-      top: 10px;
+      top: 0;
       transition: opacity 0.5s $bezier, top 0.5s $bezier;
     }
     .show-side-nav {
