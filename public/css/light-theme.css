@@ -188,7 +188,7 @@
   color: #232931;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 0;
   -webkit-transform: translate(0, -50%);

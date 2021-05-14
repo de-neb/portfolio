@@ -123,7 +123,7 @@
     background: $black-dt;
     color: $teal-dt;
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 0;
     transform: translate(0, -50%);
