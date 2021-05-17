@@ -60,6 +60,12 @@ export default {
   width: 90%;
 }
 
+.caret {
+  background: #4ecca3;
+  width: 7px;
+  height: 100%;
+}
+
 #nav {
   width: 200px;
 }
