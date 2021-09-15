@@ -8,7 +8,7 @@
         developing websites. I started studying front-end web development last
         year. However, I had to put my studying on hold when I started my first
         job. At that time, I have already learned the basics of HTML, CSS and
-        Javasccript and did few small projects to test what I have learned so
+        Javascript and did few small projects to test what I have learned so
         far.
       </p>
       <br />

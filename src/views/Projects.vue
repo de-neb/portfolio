@@ -9,7 +9,16 @@
       some are pure animation.
     </p>
     <div
-      class="container m-0 p-xl-5 p-lg-5 p-md-3 py-sm-3 px-sm-0 d-flex justify-content-center mb-5"
+      class="
+        container
+        m-0
+        p-xl-5 p-lg-5 p-md-3
+        py-sm-3
+        px-sm-0
+        d-flex
+        justify-content-center
+        mb-5
+      "
     >
       <div
         id="project-carousel"
@@ -74,7 +83,12 @@
     <div class="container p-5 p-md-2 p-sm-1 mt-3 d-flex justify-content-center">
       <div class="row mt-5 justify-content-evenly gap-1">
         <div
-          class="card bg-teal mb-5 col-xxl-4 col-xl-5 col-lg-7 col-md-5 col-sm-9 col-12"
+          class="
+            card
+            bg-teal
+            mb-5
+            col-xxl-4 col-xl-5 col-lg-7 col-md-5 col-sm-9 col-12
+          "
           v-for="(project, i) in projects"
           :key="project.url"
           :class="{ 'col-md-6': i === projects.length - 1 }"
@@ -137,71 +151,61 @@ export default {
         {
           title: "Google Landing Page",
           url: "google-homepage",
-          text:
-            "I recreated Google's home page to practice HTML and CSS. No Javascript functionalities were added.",
+          text: "I recreated Google's home page to practice HTML and CSS. No Javascript functionalities were added.",
           tools: ["HTML", "CSS"],
         },
         {
           title: "Tindog",
           url: "Tindog",
-          text:
-            "Created a landing page for a product, Tindog using HTML and Bootstrap.",
+          text: "Created a landing page for a product, Tindog using HTML and Bootstrap.",
           tools: ["HTML", "Bootstrap"],
         },
         {
           title: "Python Documentation",
           url: "python-documentation",
-          text:
-            "A 'not complete' Technical Documentation to practice using media queries and creating a responsive web design.",
+          text: "A 'not complete' Technical Documentation to practice using media queries and creating a responsive web design.",
           tools: ["HTML", "CSS"],
         },
         {
           title: "Youtube (embedding video and images)",
           url: "youtube-homepage",
-          text:
-            "Recreated Youtube's video content page where I used grid and flex displays. I also made it responsive.",
+          text: "Recreated Youtube's video content page where I used grid and flex displays. I also made it responsive.",
           tools: ["HTML", "CSS"],
         },
         {
           title: "Survey Form",
           url: "Survey-Form",
-          text:
-            "A simple survey form. This is created to pratice creating forms and using diffrent inputs.",
+          text: "A simple survey form. This is created to pratice creating forms and using diffrent inputs.",
           tools: ["HTML", "CSS"],
         },
         {
           title: "Simon Game",
           url: "Simon",
-          text:
-            "This is my first game with an actual graphics. I used jQuery on this one.",
+          text: "This is my first game with an actual graphics. I used jQuery on this one.",
           tools: ["HTML", "CSS", "Javascript", "jQuery"],
         },
         {
           title: "Roll the Dice",
           url: "roll-dice",
-          text:
-            "Created this project to practice Document Object Model manipulation using vanilla Javascript.",
+          text: "Created this project to practice Document Object Model manipulation using vanilla Javascript.",
           tools: ["HTML", "CSS", "Javascript"],
         },
         {
           title: "Reaction Timer",
           url: "reaction-timer",
-          text:
-            "My first project using Vue and it's CLI. It measures how quickly you can click the block.",
+          text: "My first project using Vue and it's CLI. It measures how quickly you can click the block.",
           tools: ["HTML", "CSS", "Vue"],
         },
         {
           title: "To-do List",
           url: "To-do-list",
-          text:
-            "My first web app with CRUD functionality. You can create a 'task list' and add 'to-do' items inside. You can also set a 'to-do' item's priority, date and details. Each task list and its items are saved locally in the browser, so it can be accessed again when visiting the page. I also added a notes section.",
+          text: "My first web app with CRUD functionality. You can create a 'task list' and add 'to-do' items inside. You can also set a 'to-do' item's priority, date and details. Each task list and its items are saved locally in the browser, so it can be accessed again when visiting the page. I also added a notes section.",
           tools: ["HTML", "CSS", "Javascript", "Vue", "Sass"],
         },
         {
           title: "Newsletter Sign Up",
           url: "newsletter-signup",
-          text:
-            "This is created after learning some of the basics in Node.js and using an API particularly Mailchimp's Marketing API.",
+          text: "This is created after learning some of the basics in Node.js and using an API particularly Mailchimp's Marketing API.",
           tools: ["HTML", "CSS", "Javascript", "Bootstrap", "Node.js"],
           heroku: true,
           herokuUrl: "https://owl-newsletter-signup.herokuapp.com/",
@@ -209,15 +213,13 @@ export default {
         {
           title: "Portfolio v2",
           url: "web-portfolio-v2",
-          text:
-            "I decided to improved my first portfolio using Vue and after learning the set up for Vue's routes. I think using Vue made my code more readable and organized compared on my first portfolio where I just used pure HTML, CSS and Javascript. Although, I also think that the same could still be achieved if I didn't use any framework like Vue it's just that I'll be seeing probably a lot of HTML elements in my Javascript file. In this version I only used three colors for my color scheme and went for a very simple design. I also added a light and dark theme.",
+          text: "I decided to improved my first portfolio using Vue and after learning the set up for Vue's routes. I think using Vue made my code more readable and organized compared on my first portfolio where I just used pure HTML, CSS and Javascript. Although, I also think that the same could still be achieved if I didn't use any framework like Vue it's just that I'll be seeing probably a lot of HTML elements in my Javascript file. In this version I only used three colors for my color scheme and went for a very simple design. I also added a light and dark theme.",
           tools: ["HTML", "CSS", "Sass", "Bootstrap", "Vue"],
         },
         {
           title: "Weather for Today",
           url: "weather-project",
-          text:
-            "This web app uses OpenWeatherMap API for getting the weather data and Geolocation API for detecting the user's location. I also used Node.js for handling requests in the server and deployed the web app in Heroku. You can search the weather updates of any location or allow the app to pinpoint your location (though low accuracy for now). I wanted to try creating backgrounds for this project so I made a night and day backgrounds using Figma. The style is heavily influenced by Kurzgesagt art style.",
+          text: "This web app uses OpenWeatherMap API for getting the weather data and Geolocation API for detecting the user's location. I also used Node.js for handling requests in the server and deployed the web app in Heroku. You can search the weather updates of any location or allow the app to pinpoint your location (though low accuracy for now). I wanted to try creating backgrounds for this project so I made a night and day backgrounds using Figma. The style is heavily influenced by Kurzgesagt art style.",
           tools: [
             "HTML",
             "CSS",
@@ -229,6 +231,12 @@ export default {
           ],
           heroku: true,
           herokuUrl: "https://weather-4-today.herokuapp.com/",
+        },
+        {
+          title: "Movie Library",
+          url: "movie-library",
+          text: "In this website you can browse upcomming, popular or top rated movies. You can also search for a movie and see it's information, or look for movies with specific genres. I used the TheMovieDatabase's API for the data. I also used Nuxt (a Vue framework) for this project which made creating components, pages and routing easier.",
+          tools: ["HTML", "CSS", "Bootstrap", "Vue", "Nuxt"],
         },
       ],
       pens: [
