@@ -255,6 +255,13 @@ export default {
         { title: "#14- Upload", url: "QWGBXav" },
         { title: "#15 - Shapes", url: "rNWZPaN" },
         { title: "#16", url: "yLVGoPo" },
+        { title: "#18", url: "RwgyOma" },
+        { title: "#19", url: "GREGaKZ" },
+        { title: "#20", url: "NWgBJRL" },
+        { title: "#21", url: "ZEyqYpQ" },
+        { title: "22", url: "OJgavwj" },
+        { title: "23", url: "vYZQrjM" },
+        { title: "24", url: "XWgoajv" },
       ],
     };
   },
