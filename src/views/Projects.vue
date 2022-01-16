@@ -1,93 +1,15 @@
 <template>
   <MainContent>
-    <h1 class="title">Challenges from 100 Days CSS Challenges</h1>
-    <p class="text-start mt-3 fs-5 fw-light fade-in light-theme-text">
-      I did this challenge in order to practice and discover some techniques in
-      CSS. From the title itself there are 100 challenges where I needed to
-      create an exact replica of the challenge for the day. So far I've made 15
-      entries and some of these are interactive when clicked or hovered while
-      some are pure animation.
-    </p>
-    <div
-      class="
-        container
-        m-0
-        p-xl-5 p-lg-5 p-md-3
-        py-sm-3
-        px-sm-0
-        d-flex
-        justify-content-center
-        mb-5
-      "
-    >
-      <div
-        id="project-carousel"
-        class="carousel slide carousel-dark carousel-fade w-75"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-indicators mx-0">
-          <button
-            data-bs-target="#project-carousel"
-            v-for="(el, i) in pens"
-            :key="i"
-            :data-bs-slide-to="i"
-            class="btn-teal"
-            :class="{ active: i == 0 }"
-          ></button>
-        </div>
-        <div class="carousel-inner" role="listbox">
-          <div
-            class="carousel-item text-center"
-            v-for="(pen, index) in pens"
-            :class="{ active: index == 0 }"
-            :key="pen"
-          >
-            <iframe
-              scrolling="no"
-              :title="pen.title"
-              :src="
-                'https://codepen.io/denksy/embed/' +
-                pen.url +
-                '?height=500&theme-id=24311&default-tab=result'
-              "
-              frameborder="no"
-              loading="lazy"
-              allowtransparency="true"
-              allowfullscreen="false"
-            >
-            </iframe>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          class="carousel-control-prev"
-          data-bs-target="#project-carousel"
-          role="button"
-          data-bs-slide="prev"
-        >
-          <i class="fas fa-chevron-left text-teal fa-3x"></i>
-        </button>
-        <button
-          type="button"
-          class="carousel-control-next"
-          data-bs-target="#project-carousel"
-          role="button"
-          data-bs-slide="next"
-        >
-          <i class="fas fa-chevron-right text-teal fa-3x"></i>
-        </button>
-      </div>
-    </div>
+    <!-- projects -->
     <h1 class="title text-start mt-5">Projetcs</h1>
     <div class="container p-5 p-md-2 p-sm-1 mt-3 d-flex justify-content-center">
-      <div class="row mt-5 justify-content-evenly gap-1">
+      <div class="row mt-5 justify-content-evenly gap-2">
         <div
           class="
             card
             bg-teal
             mb-5
-            col-xxl-4 col-xl-5 col-lg-7 col-md-5 col-sm-9 col-12
+            col-xxl-4 col-xl-5 col-lg-7 col-md-7 col-sm-9 col-12
           "
           v-for="(project, i) in projects"
           :key="project.url"
@@ -136,6 +58,83 @@
         </div>
       </div>
     </div>
+
+    <!-- css challenge -->
+    <h1 class="title">Challenges from 100 Days CSS Challenges</h1>
+    <p class="text-start mt-3 fs-5 fw-light fade-in light-theme-text">
+      I did this challenge in order to practice and discover some techniques in
+      CSS. From the title itself there are 100 challenges where I needed to
+      create an exact replica of the challenge for the day. So far I've made 15
+      entries and some of these are interactive when clicked or hovered while
+      some are pure animation.
+    </p>
+    <div
+      class="
+        container
+        m-0
+        p-xl-5 p-lg-5 p-md-3
+        py-sm-3
+        px-sm-0
+        d-flex
+        justify-content-center
+        mb-5
+      "
+    >
+      <div
+        id="project-carousel"
+        class="carousel slide carousel-dark carousel-fade w-75"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators mx-0">
+          <button
+            data-bs-target="#project-carousel"
+            v-for="(el, i) in pens"
+            :key="i"
+            :data-bs-slide-to="i"
+            class="btn-teal"
+            :class="{ active: i == 0 }"
+          ></button>
+        </div>
+        <div class="carousel-inner" role="listbox">
+          <div
+            class="carousel-item text-center"
+            v-for="(pen, index) in pens"
+            :class="{ active: index == 0 }"
+            :key="pen"
+          >
+            <iframe
+              scrolling="no"
+              :title="pen.title"
+              :src="`https://codepen.io/denksy/embed/${pen.url}?theme-id=light&default-tab=result`"
+              frameborder="no"
+              loading="lazy"
+              allowtransparency="true"
+              allowfullscreen="false"
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="carousel-control-prev"
+          data-bs-target="#project-carousel"
+          role="button"
+          data-bs-slide="prev"
+        >
+          <i class="fas fa-chevron-left text-teal fa-3x"></i>
+        </button>
+        <button
+          type="button"
+          class="carousel-control-next"
+          data-bs-target="#project-carousel"
+          role="button"
+          data-bs-slide="next"
+        >
+          <i class="fas fa-chevron-right text-teal fa-3x"></i>
+        </button>
+      </div>
+    </div>
   </MainContent>
 </template>
 
@@ -148,36 +147,6 @@ export default {
   data() {
     return {
       projects: [
-        {
-          title: "Google Landing Page",
-          url: "google-homepage",
-          text: "I recreated Google's home page to practice HTML and CSS. No Javascript functionalities were added.",
-          tools: ["HTML", "CSS"],
-        },
-        {
-          title: "Tindog",
-          url: "Tindog",
-          text: "Created a landing page for a product, Tindog using HTML and Bootstrap.",
-          tools: ["HTML", "Bootstrap"],
-        },
-        {
-          title: "Python Documentation",
-          url: "python-documentation",
-          text: "A 'not complete' Technical Documentation to practice using media queries and creating a responsive web design.",
-          tools: ["HTML", "CSS"],
-        },
-        {
-          title: "Youtube (embedding video and images)",
-          url: "youtube-homepage",
-          text: "Recreated Youtube's video content page where I used grid and flex displays. I also made it responsive.",
-          tools: ["HTML", "CSS"],
-        },
-        {
-          title: "Survey Form",
-          url: "Survey-Form",
-          text: "A simple survey form. This is created to pratice creating forms and using diffrent inputs.",
-          tools: ["HTML", "CSS"],
-        },
         {
           title: "Simon Game",
           url: "Simon",
