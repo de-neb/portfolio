@@ -4,20 +4,13 @@
     <div class="container p-5 mt-3">
       <p class="text-p fs-5 light-theme-text">
         <img src="../assets/temp.jpeg" alt="profile-pic" class="profile" />
-        I’m a graduate of Electronics Engineering and I’ve taken an interest in
-        developing websites. I started studying front-end web development last
-        year. However, I had to put my studying on hold when I started my first
-        job. At that time, I have already learned the basics of HTML, CSS and
-        Javascript and did few small projects to test what I have learned so
-        far.
+        I'm graduate of Electronics Engineering and I'm aspiring to become a
+        Fullstack Web Developer.
       </p>
       <br />
       <p class="text-p fs-5 light-theme-text">
-        I’ve resumed studying web development this year and I’m currently
-        learning the basics of back-end development in Udemy. I aim to study web
-        development continously and I’m excited to get the point where I can
-        create much more interesting and fun projects as I made progress on
-        learning it.
+        I’m excited to get the point where I can create much more interesting
+        and fun projects as I've made more progress in my learning.
       </p>
     </div>
     <h1 class="title text-start px-3">Tools I've used so far</h1>
