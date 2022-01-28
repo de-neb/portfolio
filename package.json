@@ -6,9 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "deploy": "node scripts/gh-pages-deploy.js"
-  
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.2",
     "bootstrap": "^5.0.0-beta3",
     "core-js": "^3.6.5",
     "execa": "latest",
@@ -23,6 +23,5 @@
     "chalk": "^4.0.0",
     "execa": "^4.0.0",
     "node-emoji": "^1.10.0"
-    
   }
 }

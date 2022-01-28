@@ -9,9 +9,9 @@
     <div
       class="scroll-up"
       :class="{
-        hidden: hide,
-        'slide-up-scroll': animate,
-        'slide-down-scroll': !animate,
+        hidden: isHidden,
+        'slide-up-scroll': toAnimate,
+        'slide-down-scroll': !toAnimate,
       }"
       @click="scrollToTop"
     >
@@ -25,17 +25,17 @@ export default {
   name: "MainContent",
   data() {
     return {
-      hide: true,
-      animate: false,
+      isHidden: true,
+      toAnimate: false,
     };
   },
   methods: {
     handleScroll() {
       if (this.$refs["main-content"].scrollTop > 100) {
-        this.hide = false;
-        this.animate = true;
+        this.isHidden = false;
+        this.toAnimate = true;
       } else {
-        this.animate = false;
+        this.toAnimate = false;
       }
     },
     scrollToTop() {

@@ -7,7 +7,15 @@
       <span class="" ref="caret1"></span>
     </h2>
     <div
-      class="container-fluid d-flex align-items-center justify-content-center position-relative gap-0 mt-5"
+      class="
+        container-fluid
+        d-flex
+        align-items-center
+        justify-content-center
+        position-relative
+        gap-0
+        mt-5
+      "
     >
       <Navigation id="nav" class="fs-2 d-flex flex-column fade-in" />
       <Illustration class="illus inline-block" />
@@ -32,7 +40,7 @@ export default {
       this.mainText[index].split("").forEach((letter, i) => {
         setTimeout(() => {
           this.$refs["caret" + index].insertAdjacentHTML("beforebegin", letter);
-        }, i * 100);
+        }, i * 30);
       });
     },
   },
@@ -45,7 +53,7 @@ export default {
     }, this.mainText[0].length * 100 + 300);
     setTimeout(() => {
       this.$refs["caret1"].classList.remove("caret");
-    }, 5000);
+    }, 3000);
   },
 };
 </script>
@@ -71,7 +79,7 @@ export default {
 }
 
 .fade-in {
-  animation-delay: 5s !important;
+  animation-delay: 2.8s !important;
 }
 
 svg {
