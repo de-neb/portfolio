@@ -8,18 +8,15 @@
       @click="sendToSideNav"
       >{{ link }}<span></span
     ></router-link>
-    <a
-      :href="'https://docs.google.com/viewer?url=' + pdfLink"
-      class="w-100 text-start link mb-4"
-      target="_blank"
+    <a :href="pdfLink" class="w-100 text-start link mb-4" target="_blank"
       >Resume</a
     >
     <div class="info text-start">
-      <a href="https://github.com/denksy" class="email me-3"
+      <a href="https://github.com/de-neb" class="email me-3"
         ><i class="fab fa-github fa-1x"></i
       ></a>
 
-      <a href="https://codepen.io/denksy" class="email me-3"
+      <a href="https://codepen.io/de-neb" class="email me-3"
         ><i class="fab fa-codepen fa-1x"></i
       ></a>
 
@@ -37,7 +34,7 @@ export default {
     return {
       navLinks: ["Home", "About", "Projects"],
       pdfLink:
-        "https://raw.githubusercontent.com/denksy/web-portfolio-v2/main/resume/eden-baui-resume.pdf",
+        "https://drive.google.com/file/d/1fmTMhPBK-vULLZVeDWPWjfpgC4r5ujWU/view?usp=sharing",
     };
   },
   methods: {

@@ -3,14 +3,14 @@
     <h1 class="title px-3">A little bit about me</h1>
     <div class="container p-5 mt-3">
       <p class="text-p fs-5 light-theme-text">
-        <img src="../assets/temp.jpeg" alt="profile-pic" class="profile" />
-        I'm graduate of Electronics Engineering and I'm aspiring to become a
-        Fullstack Web Developer.
-      </p>
-      <br />
-      <p class="text-p fs-5 light-theme-text">
-        I’m excited to get the point where I can create much more interesting
-        and fun projects as I've made more progress in my learning.
+        I am a graduate of Electronics Engineering and aspiring to become a
+        Fullstack Web Developer. I learned the basics of Javascript sometime in
+        2020 and started learning front-end web development last year. As I made
+        progress on learning web development, I also wanted to expand my
+        knowledge in back-end web development. Learning full stack web
+        development is challenging but fun and rewarding at the same time. And I
+        look forward to showcasing my skills, improving them, and creating more
+        projects.
       </p>
     </div>
     <h1 class="title text-start px-3">Tools I've used so far</h1>

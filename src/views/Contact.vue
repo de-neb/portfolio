@@ -10,7 +10,7 @@
 
       <div class="mt-4">
         <h3>You can also find me on</h3>
-        <a href="https://github.com/denksy" class="email me-3"
+        <a href="https://github.com/de-neb" class="email me-3"
           ><i class="fab fa-github fa-2x"></i
         ></a>
 

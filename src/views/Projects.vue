@@ -2,7 +2,7 @@
   <MainContent>
     <!-- projects -->
     <h1 class="title text-start mt-5">Projetcs</h1>
-    <div class="container p-5 p-md-2 p-sm-1 mt-3 d-flex justify-content-center">
+    <div class="container p-3 p-md-2 p-sm-1 mt-3 d-flex justify-content-center">
       <div class="row mt-5 justify-content-evenly gap-2">
         <div
           class="
@@ -35,9 +35,10 @@
               <a
                 :href="
                   !project.herokuUrl
-                    ? 'https://denksy.github.io/' + project.url
+                    ? 'https://de-neb.github.io/' + project.url
                     : project.herokuUrl
                 "
+                v-if="project.title != 'Portfolio v2'"
                 type="button"
                 class="btn btn-outline-teal light-theme-text"
                 target="_blank"
@@ -46,7 +47,7 @@
               </a>
 
               <a
-                :href="'https://github.com/denksy/' + project.url"
+                :href="'https://github.com/de-neb/' + project.url"
                 type="button"
                 class="btn btn-outline-teal light-theme-text"
                 target="_blank"
@@ -60,13 +61,10 @@
     </div>
 
     <!-- css challenge -->
-    <h1 class="title">Challenges from 100 Days CSS Challenges</h1>
+    <h1 class="title">CSS Challenges</h1>
     <p class="text-start mt-3 fs-5 fw-light fade-in light-theme-text">
-      I did this challenge in order to practice and discover some techniques in
-      CSS. From the title itself there are 100 challenges where I needed to
-      create an exact replica of the challenge for the day. So far I've made 15
-      entries and some of these are interactive when clicked or hovered while
-      some are pure animation.
+      I did these challenges to practice and discover some techniques in CSS.
+      Some challenges are interactive, while others are animations.
     </p>
     <div
       class="
@@ -105,7 +103,7 @@
             <iframe
               scrolling="no"
               :title="pen.title"
-              :src="`https://codepen.io/denksy/embed/${pen.url}?theme-id=light&default-tab=result`"
+              :src="`https://codepen.io/de-neb/embed/${pen.url}?theme-id=light&default-tab=result`"
               frameborder="no"
               loading="lazy"
               allowtransparency="true"
