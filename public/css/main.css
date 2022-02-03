@@ -828,6 +828,9 @@ html {
   .dark-theme .title {
     font-size: 40px !important;
   }
+  .dark-theme .show-side-nav {
+    width: 100%;
+  }
 }
 
 .light-theme {
@@ -1534,6 +1537,9 @@ html {
 @media (max-width: 570px) {
   .light-theme .title {
     font-size: 40px !important;
+  }
+  .light-theme .show-side-nav {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */

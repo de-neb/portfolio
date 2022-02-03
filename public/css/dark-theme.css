@@ -813,5 +813,8 @@
   .dark-theme .title {
     font-size: 40px !important;
   }
+  .dark-theme .show-side-nav {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=dark-theme.css.map */

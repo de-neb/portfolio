@@ -850,5 +850,8 @@
   .light-theme .title {
     font-size: 40px !important;
   }
+  .light-theme .show-side-nav {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=light-theme.css.map */
