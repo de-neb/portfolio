@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/denksy/web-portfolio-v2">
-    <img src="client/src/assets/etech-logo.png" alt="icon" width="80">
+    <img src="src/assets/etech-logo.png" alt="icon" width="80">
   </a>
 
 <h3 align="center">Portfolio v2</h3>
