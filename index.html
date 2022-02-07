@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="./favicon.ico"><link rel="stylesheet" type="text/css" href="./css/main.css" id="dark-theme"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"><title>Portfolio | Eden Baui</title><script>// MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function(s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);</script><link href="/css/app.68bca7ea.css" rel="preload" as="style"><link href="/css/chunk-vendors.0f1ada3b.css" rel="preload" as="style"><link href="/js/app.274d2989.js" rel="preload" as="script"><link href="/js/chunk-vendors.3d71d8cc.js" rel="preload" as="script"><link href="/css/chunk-vendors.0f1ada3b.css" rel="stylesheet"><link href="/css/app.68bca7ea.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but portfolio-v2 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" class="dark-theme"></div><script src="/js/chunk-vendors.3d71d8cc.js"></script><script src="/js/app.274d2989.js"></script></body></html>
