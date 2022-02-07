@@ -34,7 +34,7 @@ export default {
     return {
       navLinks: ["Home", "About", "Projects"],
       pdfLink:
-        "https://drive.google.com/file/d/1fmTMhPBK-vULLZVeDWPWjfpgC4r5ujWU/view?usp=sharing",
+        "https://drive.google.com/file/d/1Lrfl1LOjWA-kHG1SeKqPUCmLmaWjwsXx/view?usp=sharing",
     };
   },
   methods: {
