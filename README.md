@@ -8,7 +8,6 @@
 <h3 align="center">Portfolio v2</h3>
   <p align="center">
     <br />
-    <a href="https://www.edenb.tech/">View Demo</a>
   </p>
 </div>
 
